@@ -4,13 +4,14 @@
 # Part 1 (2 pts each)
 
 Assume a table Emp(**ssn**, name, salary) of employee records, where `ssn` is the primary key.  Assume the following characteristics:
-  * 10,000 records
-  * Page size = 1000 bytes
-  * tuple size = 50 bytes
-  * directory entry size = 10 bytes
-  * All data stored on disk
-  * You can assume that there are no overflow pages in the hash index
-  * The query will always return a result
+
+* 100,000 records
+* Page size = 1000 bytes
+* tuple size = 50 bytes
+* directory entry size = 10 bytes
+* No other overhead when storing data on pages.
+* You can assume that there are no overflow pages in the hash index
+* The queries always return a result
 
 ## Select Queries
 
@@ -20,7 +21,7 @@ Suppose we run `select name from Emp where ssn=1000`.
 
 **(b)** Assume a primary B+-tree index on `emp(ssn)`, and fill factor of 1. How many page accesses will the query cost?
 
-It will be helpful to compute
+It will be helpful to compute (you only need to submit the final cost)
 
 * Number of leaf pages
 * Fan out 
@@ -28,19 +29,25 @@ It will be helpful to compute
 
 **(c)** Assume only a secondary B+-tree on `emp(ssn)`, and fill factor of 1. How many page accesses will the query cost?
 
+It will be helpful to compute (you only need to submit the final cost)
+
+* Number of leaf pages
+* Fan out 
+* Height of the tree
+
 **(d)** What are the costs for (b) and (c) if the fill factor is 50%?
 
 **(e)** Assume only a secondary hash index on `Hash(emp.ssn)`. How mayn page accesses will the query cost?
 
-## Aggregation Queries **WE can remove this part below if the above seems like a reasonable exercise**
+## Aggregation Queries
 
 Suppose we run `select max(salary) from Emp`
 
-**(f)** Assuming no indices, what is the cost of this query (in number of disk accesses)?
+**(f)** Assuming no indices, how many disk accesses to run this query?
 
-**(g)** How many disk accesses if there is a secondary B+ tree index on `emp(ssn)`?
+**(g)** How many disk accesses if there is a secondary B+ tree index on `emp(salary)`?
 
-**(h)** How many disk accesses if there is a secondary hash index on `emp(ssn)`?
+**(h)** How many disk accesses if there is a secondary hash index on `emp(salary)`?
 
 
 # Submission for Cost estimation

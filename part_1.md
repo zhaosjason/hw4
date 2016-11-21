@@ -9,7 +9,7 @@ Assume a table Emp(**ssn**, name, salary) of employee records, where `ssn` is th
   * tuple size = 50 bytes
   * directory entry size = 10 bytes
   * All data stored on disk
-  * In all questions below that involve indices, assume that the number of leaf pages for B+-trees is equal to number of pages on heap and there is overflow on the hash index
+  * You can assume that there are no overflow pages in the hash index
   * The query will always return a result
 
 ## Select Queries

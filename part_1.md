@@ -14,23 +14,33 @@ Assume a table Emp(**ssn**, name, salary) of employee records, where `ssn` is th
 
 ## Select Queries
 
-**(a)** We are about to run a query on this Emp table to find the name of the employee with a given ssn, say 1000; i.e., in SQL, "select name from Emp where ssn=1000". What is the cost of this operation in terms of disk accessess assuming no indices.
+Suppose we run `select name from Emp where ssn=1000`.
 
-**(b)** Assume a primary B+-tree index on `emp(ssn)`. Calculate the cost(in terms of disk access) given the tuple size of running the query discussed in (a)**
+**(a)**  If there are no indices, how many page accesses does this query cost on average?
 
-**(c)** Now assume we have a secondary B+-tree on `emp(ssn)`. A data entry in the tree is a pair (ssn, RID of a data record in the heap). What is the approximate cost (in number of disk accesses) of executing the query in (a) if we use the B+-tree index? 
+**(b)** Assume a primary B+-tree index on `emp(ssn)`, and fill factor of 1. How many page accesses will the query cost?
 
-**(d)** What would be the case if the fill factor reduced by 50%. Discuss the impact on (b) and (c)
+It will be helpful to compute
 
-**(e)** Now assume that we have a secondary hash index on `Hash(emp.ssn)` for the Emp table. A data entry in the hash is a pair (ssn, RID of a data record in the heap). What is the approximate cost (in number of disk accesses) of executing the query in (a) if we use the hash index? 
+* Number of leaf pages
+* Fan out 
+* Height of the tree
+
+**(c)** Assume only a secondary B+-tree on `emp(ssn)`, and fill factor of 1. How many page accesses will the query cost?
+
+**(d)** What are the costs for (b) and (c) if the fill factor is 50%?
+
+**(e)** Assume only a secondary hash index on `Hash(emp.ssn)`. How mayn page accesses will the query cost?
 
 ## Aggregation Queries **WE can remove this part below if the above seems like a reasonable exercise**
 
-**(f)** Now, consider this query: find the maximum salary in the Emp table; i.e., in SQL, "select max(salary) from Emp". Assuming no indexing of any kind, i.e., we just have the records of the table in the heap, what is the cost of this query (in number of disk accesses)?
+Suppose we run `select max(salary) from Emp`
 
-**(g)** Discuss impact on the query in (f) in terms of cost estimation if we use-
-		**1. ** Secondary B+-tree index on `emp(ssn)`
-		**2. ** Secondary hash index on `Hash(emp.ssn)` 
+**(f)** Assuming no indices, what is the cost of this query (in number of disk accesses)?
+
+**(g)** How many disk accesses if there is a secondary B+ tree index on `emp(ssn)`?
+
+**(h)** How many disk accesses if there is a secondary hash index on `emp(ssn)`?
 
 
 # Submission for Cost estimation

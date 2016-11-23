@@ -3,7 +3,7 @@
 
 * Assigned: 11/21 Mon
 
-* Due: 11/30 Mon, 2:30 PM
+* Due: 11/30 Wed, 2:30 PM
 
 * Value: 3.75% of your grade
 

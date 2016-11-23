@@ -7,7 +7,7 @@
 
 * Value: 3.75% of your grade
 
-HW3 consists of two parts. 
+HW4 consists of two parts. 
 
 [Part 1](./part_1.md) is required to do simple cost estimation based on statistics provided with.
 

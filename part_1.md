@@ -13,6 +13,10 @@ Assume a table Emp(**ssn**, name, salary) of employee records, where `ssn` is th
 * You can assume that there are no overflow pages in the hash index
 * The queries always return a result
 
+Clarification
+
+* assume that each page accessed is from disk (memory only has space for one page)
+
 ## Select Queries
 
 Suppose we run `select name from Emp where ssn=1000`.
